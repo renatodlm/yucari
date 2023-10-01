@@ -162,6 +162,11 @@ function yucari_scripts()
 }
 add_action('wp_enqueue_scripts', 'yucari_scripts');
 
+
+/**
+ * Render svg
+ */
+require get_template_directory() . '/inc/render-svg.php';
 /**
  * Implement the Custom Header feature.
  */
