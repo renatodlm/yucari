@@ -53,6 +53,7 @@ function yucari_setup()
    register_nav_menus(
       array(
          'menu-1' => esc_html__('Primary', 'yucari'),
+         'institutional' => esc_html__('Institutional', 'yucari'),
       )
    );
 

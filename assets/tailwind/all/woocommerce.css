@@ -1,0 +1,9 @@
+.woocommerce.columns-3 ul.products li.product {
+   margin: 0 2.3% 2.992em 0;
+   width: 31.034%;
+}
+
+.woocommerce ul.products li.product a img {
+   height: 47.2313rem;
+   object-fit: cover;
+}

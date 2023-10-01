@@ -24,3 +24,42 @@
 
 <body <?php body_class(); ?>>
    <?php wp_body_open(); ?>
+
+   <header class="header">
+      <div class="container">
+         <div class="flex gap-[9.375rem] justify-center items-center">
+            <div class="w-[10rem]">
+               <?php the_custom_logo() ?>
+            </div>
+            <div class="flex-1">
+               <?php
+               wp_nav_menu([
+                  'theme_location'  => 'menu-1',
+                  'container_class' => '',
+                  'container'       => 'nav',
+                  'menu_class'      => 'menu-primary'
+               ]);
+               ?>
+            </div>
+            <div class="w-[10rem]">
+               <ul class="flex gap-4">
+                  <li>
+                     <a href="">
+                        <?php render_svg('search'); ?>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="">
+                        <?php render_svg('user'); ?>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="">
+                        <?php render_svg('shopping-cart'); ?>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </header>
