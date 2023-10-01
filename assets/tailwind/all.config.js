@@ -19,10 +19,19 @@ module.exports = {
          padding: {
             DEFAULT: '15px',
          },
+         screens: {
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1280px',
+            '2xl': '1536px',
+            '3xl': '1590px',
+            '4xl': '1832px',
+         }
       },
       fontFamily: {
          primary: [
-            'Kollektif',
+            'HelveticaNeue',
             'ui-sans-serif',
             'system-ui',
             '-apple-system',
@@ -43,25 +52,17 @@ module.exports = {
          screens: {
             'xs': '420px',
             '3xl': '1650px',
-         },
-         borderRadius: {
-            'small': '0.1875rem'
+            '4xl': '1892px',
          },
          colors: {
             purple: {
-               400: '#4C2B80',
-               500: '#5C2E87',
-               900: '#160829'
+               900: '#0C030F'
             },
             gray: {
-               300: '#E1E1E3',
-            },
-            neutral: {
-               100: '#BBBBBB',
-               300: '#F4F4F4',
+               600: '#929292',
             },
             yellow: {
-               500: '#F5C342',
+               100: '#FCF9EA',
             },
          },
       },
