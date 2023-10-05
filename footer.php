@@ -9,6 +9,7 @@
  *
  * @package yucari
  */
+
 ?>
 <footer class="footer">
    <div class="container">
@@ -26,15 +27,15 @@
             ]);
             ?>
          </div>
-         <div class="w-[10rem]">
-            <ul class="flex gap-4">
+         <div class="w-fit">
+            <ul class="flex gap-4 text-white">
                <li>
-                  <a href="mailto:yucarisp@gmail.com">
+                  <a class="underline font-normal" href="mailto:yucarisp@gmail.com">
                      yucarisp@gmail.com
                   </a>
                </li>
                <li>
-                  <a href="">
+                  <a class="font-normal" href="#">
                      IG
                   </a>
                </li>
