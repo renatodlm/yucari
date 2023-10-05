@@ -32,7 +32,7 @@ ul.menu-primary {
 }
 
 .menu-primary li a {
-   @apply text-white font-normal text-sm xl:text-base font-secondary;
+   @apply text-white font-normal text-sm 2xl:text-base font-secondary;
 }
 
 .menu-item {

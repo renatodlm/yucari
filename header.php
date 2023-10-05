@@ -27,7 +27,7 @@
 
    <header class="header">
       <div class="container">
-         <div class="flex gap-[9.375rem] justify-center items-center">
+         <div class="flex gap-10 lg:gap-[4.75rem] 3xl:gap-[9.375rem] justify-center items-center">
             <div class="w-[10rem]">
                <?php the_custom_logo() ?>
             </div>

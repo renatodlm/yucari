@@ -17,8 +17,9 @@ get_header();
          $logo       = get_sub_field('logo');
          $logo_src   = $logo['sizes']['large'] ?? '';
       ?>
-         <section class="hero" style="background-image: url(<?php echo $bg_src ?>);">
-            <img class="m-auto text-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" src="<?php echo $logo_src ?>" alt="">
+         <section class="hero scrolling-container" style="background-image: url(<?php echo $bg_src ?>);">
+            <div class="image-animation-hero m-auto text-center absolute -left-[100vw] top-1/2 -translate-y-1/2 z-0" style="background-image: url(<?php echo $logo_src ?>);">
+            </div>
          </section>
       <?php endwhile; ?>
    <?php endif; ?>
@@ -53,10 +54,17 @@ get_header();
          $link     = get_sub_field('link');
 
       ?>
-         <section class="collection py-[10rem] bg-yellow-100">
+         <section class="collection py-[10rem] bg-yellow-100 scrolling-container scrolling-container ">
             <div class="container relative">
-               <video class="m-auto w-full max-w-[19.6875rem] h-auto relative z-10" src="<?php echo $video['url'] ?>"></video>
-               <img class="m-auto text-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0" src="<?php echo $logo_src ?>" alt="">
+               <video id="homeVideo" class="m-auto w-full max-w-[19.6875rem] h-auto relative z-10">
+
+                  <source src="<?php echo $video['url'] ?>" type="video/mp4">
+
+                  Your browser does not support the video tag.
+
+               </video>
+               <div class="image-animation m-auto text-center absolute -left-[100vw] top-1/2 -translate-y-1/2 z-0" style="background-image: url(<?php echo $logo_src ?>);">
+               </div>
             </div>
             <?php if ($link) : ?>
                <div class="flex justify-center items-center mt-12">
