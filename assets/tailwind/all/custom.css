@@ -98,3 +98,15 @@ ul .menu-item.menu-item-has-children:hover::after {
 ul.sub-menu .menu-item.menu-item-has-children:hover::after {
    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>');
 }
+
+.entry-title {
+   @apply text-[3.5rem] font-medium mb-12;
+}
+
+.entry-content {
+   margin-bottom: 10rem;
+}
+
+main>article {
+   @apply container pt-[10rem];
+}
