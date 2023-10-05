@@ -31,3 +31,11 @@ function add_custom_woocommerce_loop_thumbnail($html, $post_id)
 
    return '<a clas="block" href="' . get_permalink() . '"><div class="group relative">' . $html . '</div></a>';
 }
+
+
+add_filter('woocommerce_product_tabs', 'remove_tabs_single_product', 10, 999);
+
+function remove_tabs_single_product($tabs)
+{
+   return [];
+}
