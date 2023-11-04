@@ -49,12 +49,13 @@
                      </a>
                   </li>
                   <li>
-                     <a href="">
+                     <?php $my_account_url = get_permalink(get_option('woocommerce_myaccount_page_id')); ?>
+                     <a href="<?= $my_account_url ?>">
                         <?php render_svg('user'); ?>
                      </a>
                   </li>
                   <li>
-                     <a href="">
+                     <a href="<?= wc_get_cart_url() ?>">
                         <?php render_svg('shopping-cart'); ?>
                      </a>
                   </li>

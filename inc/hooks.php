@@ -39,3 +39,10 @@ function remove_tabs_single_product($tabs)
 {
    return [];
 }
+
+function custom_related_products_args($args)
+{
+   $args['posts_per_page'] = 3; // Define o número de produtos relacionados que serão exibidos
+   return $args;
+}
+add_filter('woocommerce_output_related_products_args', 'custom_related_products_args');

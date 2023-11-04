@@ -72,3 +72,93 @@
 .woocommerce nav.woocommerce-pagination ul li span.current {
    @apply bg-transparent hover:bg-transparent focus:bg-transparent text-gray-900 hover:text-purple-900 focus:text-purple-900;
 }
+
+
+
+
+/* Single product */
+.woocommerce div.product {
+   @apply flex gap-x-8 flex-wrap;
+}
+
+.woocommerce div.product div.summary {
+   @apply float-none order-2;
+}
+
+section.related.products {
+   margin-top: 6.25rem;
+   flex: 0 0 100%;
+   @apply order-3 max-w-full bg-yellow-100 relative lg:py-[8.125rem] py-[5rem];
+}
+
+section.related.products *:not(a):not(img) {
+   position: relative;
+   z-index: 1;
+}
+
+section.related.products::before {
+   @apply content-[''] bg-yellow-100 left-1/2 top-1/2 h-full w-[100vw] absolute z-0 -translate-x-1/2 -translate-y-1/2;
+}
+
+section.related.products h2 {
+   @apply text-[3.5rem] mb-4 uppercase font-medium;
+}
+
+.related.products ul.products li.product {
+   width: calc(33.33% - (5.06% / 2));
+   float: left;
+}
+
+@media(min-width:1024px) {
+   .related.products ul.products li.product {
+      margin-bottom: 0 !important;
+   }
+}
+
+.related.products ul.products li.product:last-child {
+   margin-right: 0;
+}
+
+.single-gallery a img {
+   width: 100%;
+   margin-bottom: 1.5rem;
+}
+
+body.single.product-template-default .entry-content {
+   margin-bottom: 0 !important;
+}
+
+
+.woocommerce div.product form.cart .button {
+   width: 100% !important;
+   background-color: #841027 !important;
+   color: white !important;
+   text-transform: uppercase;
+   padding: 1.5rem !important;
+   border-radius: 0 !important;
+   border: none !important;
+}
+
+div.product form.cart .variations th {
+   @apply uppercase text-purple-900 block w-full mb-8;
+}
+
+.woocommerce-product-details__short-description ul {
+   padding-left: 1.5rem;
+   padding-top: 1.5rem;
+   padding-bottom: 1.5rem;
+   border-top: 1px solid #4E4E4E;
+}
+
+.woocommerce-product-details__short-description ul li {
+   @apply text-sm uppercase;
+   list-style: disc;
+   color: #4E4E4E;
+}
+
+.woocommerce div.product form.cart .variations {
+   border-top: 1px solid #4E4E4E;
+   border-bottom: 1px solid #4E4E4E;
+   padding-top: 1.5rem;
+   padding-bottom: 1.5rem;
+}
