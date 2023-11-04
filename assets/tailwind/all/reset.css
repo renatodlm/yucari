@@ -2,3 +2,17 @@ body {
    @apply font-primary;
    -webkit-font-smoothing: 'antialiased';
 }
+
+/* Estilo padrão para inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="url"],
+input[type="search"],
+input[type="button"],
+input[type="reset"] {
+   @apply border border-gray-300 p-2 focus:outline-none max-w-full;
+}

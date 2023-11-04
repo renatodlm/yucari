@@ -22,6 +22,7 @@ if (!defined('ABSPATH'))
 }
 
 global $product;
+return;
 ?>
 <div class="product_meta">
 
