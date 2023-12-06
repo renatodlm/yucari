@@ -32,9 +32,9 @@ get_header();
 
          $products = implode(',', $products);
       ?>
-         <section class="last-drop py-[10rem]">
+         <section class="last-drop lg:py-[10rem] py-[5rem]">
             <div class="container">
-               <h3 class="text-purple-900 text-[3.5rem] font-medium mb-12"><?php echo $title ?></h3>
+               <h3 class="text-purple-900 lg:text-[3.5rem] text-5xl font-medium mb-12"><?php echo $title ?></h3>
                <?php echo do_shortcode('[products ids="' . $products . '" columns="3" orderby="date" order="DESC"]') ?>
             </div>
             <?php if ($link) : ?>
@@ -54,7 +54,7 @@ get_header();
          $link     = get_sub_field('link');
 
       ?>
-         <section class="collection py-[10rem] bg-yellow-100 scrolling-container scrolling-container ">
+         <section class="collection lg:py-[10rem] py-[5rem] bg-yellow-100 scrolling-container scrolling-container ">
             <div class="container relative">
                <video id="homeVideo" class="m-auto w-full max-w-[19.6875rem] h-auto relative z-10">
 

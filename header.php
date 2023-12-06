@@ -10,6 +10,20 @@
  * @package yucari
  */
 
+$numero_produtos_carrinho = '0';
+
+if (class_exists('WooCommerce'))
+{
+   $numero_produtos_carrinho = WC()->cart->get_cart_contents_count();
+}
+
+if ($numero_produtos_carrinho > 99)
+{
+   $numero_produtos_carrinho = '99+';
+}
+
+$class_count = $numero_produtos_carrinho <= 99 ? 'text-xs' : 'text-[0.625rem]';
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -25,13 +39,13 @@
 <body <?php body_class(); ?>>
    <?php wp_body_open(); ?>
 
-   <header class="header">
+   <header class="header" x-data="{menuMobile: false}">
       <div class="container">
          <div class="flex gap-10 lg:gap-[4.75rem] 3xl:gap-[9.375rem] justify-center items-center">
             <div class="w-[10rem]">
                <?php the_custom_logo() ?>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 lg:flex hidden">
                <?php
                wp_nav_menu([
                   'theme_location'  => 'menu-1',
@@ -42,25 +56,65 @@
                ?>
             </div>
             <div class="w-[10rem]">
-               <ul class="flex gap-4">
-                  <li>
-                     <a href="">
+               <ul class="flex gap-8 lg:gap-4 justify-end">
+                  <li class="lg:flex hidden">
+                     <a href="<?php echo home_url() . '?s=' ?>">
                         <?php render_svg('search'); ?>
                      </a>
                   </li>
-                  <li>
+                  <li class="lg:flex hidden">
                      <?php $my_account_url = get_permalink(get_option('woocommerce_myaccount_page_id')); ?>
                      <a href="<?= $my_account_url ?>">
                         <?php render_svg('user'); ?>
                      </a>
                   </li>
                   <li>
-                     <a href="<?= wc_get_cart_url() ?>">
+                     <a class="relative" href="<?= wc_get_cart_url() ?>">
                         <?php render_svg('shopping-cart'); ?>
+                        <?php if (!empty($numero_produtos_carrinho)) : ?>
+                           <span class="absolute w-5 h-5 text-purple-900 bg-white bottom-0 right-0 -mb-2.5 -mr-2.5 rounded-full flex items-center justify-center <?php echo $class_count ?>"><?php echo $numero_produtos_carrinho; ?></span>
+                        <?php endif; ?>
                      </a>
+                  </li>
+                  <li class="lg:hidden">
+                     <button @click="menuMobile = true" class="text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                     </button>
                   </li>
                </ul>
             </div>
          </div>
+      </div>
+      <div :class="{'-mr-0': menuMobile === true, '-mr-[100vw]': menuMobile === false}" class="menu-mobile lg:hidden w-full h-full fixed -mr-[100vw] bg-purple-900 text-white top-0 right-0 transition-all animate-duration-300 z-[999]">
+         <button @click="menuMobile = false" class="absolute top-0 right-0 m-4 p-2 text-white rounded-full">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+         </button>
+
+         <?php
+         wp_nav_menu([
+            'theme_location'  => 'menu-1',
+            'container_class' => '',
+            'container'       => 'nav',
+            'menu_class'      => 'menu-primary-mobile'
+         ]);
+         ?>
+
+         <ul class="flex gap-4 justify-center mt-8">
+            <li>
+               <a href="<?php echo home_url() . '?s=' ?>">
+                  <?php render_svg('search'); ?>
+               </a>
+            </li>
+            <li>
+               <?php $my_account_url = get_permalink(get_option('woocommerce_myaccount_page_id')); ?>
+               <a href="<?= $my_account_url ?>">
+                  <?php render_svg('user'); ?>
+               </a>
+            </li>
+         </ul>
       </div>
    </header>

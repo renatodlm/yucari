@@ -145,6 +145,8 @@ add_action('widgets_init', 'yucari_widgets_init');
  */
 function yucari_scripts()
 {
+   wp_enqueue_script('alpinejs', get_template_directory_uri() . '/assets/lib/alpinejs.min.js', array(), _S_VERSION, true);
+
    wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), _S_VERSION, true);
    wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/lib/swiper-bundle.min.css', array(), '1.0.0', 'all');
    wp_enqueue_style('all', get_template_directory_uri() . '/assets/css/all.min.css', array(), '1.0.0', 'all');
@@ -302,3 +304,49 @@ function adicionar_campo_yucari_institution($user)
 }
 add_action('show_user_profile', 'adicionar_campo_yucari_institution');
 add_action('edit_user_profile', 'adicionar_campo_yucari_institution');
+
+function alterar_texto_botao_carrinho()
+{
+   return 'FINALIZAR PEDIDO';
+}
+
+add_filter('woocommerce_product_single_add_to_cart_text', 'alterar_texto_botao_carrinho', 10, 0);
+add_filter('woocommerce_product_add_to_cart_text', 'alterar_texto_botao_carrinho', 10, 0);
+add_filter('woocommerce_widget_cart_checkout_text', 'alterar_texto_botao_carrinho', 10, 0);
+
+function custom_filter_woocommerce_registration_password()
+{
+?>
+   <p class="form-row form-row-wide">
+      <label for="reg_password"><?php esc_html_e('Senha', 'woocommerce'); ?> <span class="required">*</span></label>
+      <input type="password" class="input-text" name="password" id="reg_password" autocomplete="new-password" required />
+   </p>
+<?php
+}
+add_action('woocommerce_register_form', 'custom_filter_woocommerce_registration_password');
+
+function disable_reset_password_link($user_login, $user_data)
+{
+   remove_action('woocommerce_before_lost_password_form', 'woocommerce_lostpassword_form');
+   remove_action('woocommerce_after_reset_password_form', 'woocommerce_reset_password');
+}
+
+function adicionar_classe_galeria_produto($html, $attachment_id)
+{
+   $html = preg_replace('/class="/', 'class="wp-post-image ', $html);
+   return $html;
+}
+
+add_filter('woocommerce_single_product_image_thumbnail_html', 'adicionar_classe_galeria_produto', 10, 2);
+
+
+// Salva a senha no novo usuário após o registro
+function salvar_senha_registro($customer_id)
+{
+   if (isset($_POST['password']))
+   {
+      wp_set_password($_POST['password'], $customer_id);
+   }
+}
+
+add_action('woocommerce_created_customer', 'salvar_senha_registro');

@@ -30,7 +30,8 @@ if (is_product())
             <h1 class="entry-title"><?php the_title() ?>
                <span class="<?php echo esc_attr(apply_filters('woocommerce_product_price_class', 'price')); ?>"><?php echo $product->get_price_html(); ?></span>
             </h1>
-         <?php } ?>
+         <?php }
+         ?>
       </div>
       <?php
 

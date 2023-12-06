@@ -13,11 +13,11 @@
 ?>
 <footer class="footer">
    <div class="container">
-      <div class="flex gap-[9.375rem] justify-center items-center">
+      <div class="flex gap-[5rem] lg:gap-[9.375rem] flex-wrap justify-center items-center">
          <div class="w-[10rem]">
             <?php the_custom_logo() ?>
          </div>
-         <div class="flex-1">
+         <div class="lg:flex-1">
             <?php
             wp_nav_menu([
                'theme_location'  => 'institutional',
