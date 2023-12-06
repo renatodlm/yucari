@@ -65,3 +65,23 @@ jQuery('.quantity').each(function () {
       spinner.find('input').trigger('change')
    })
 })
+
+document.addEventListener('DOMContentLoaded', function () {
+   var related_products = new Swiper('#swiper-related-products', {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      navigation: {
+         nextEl: '.swiper-button-next',
+         prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+         el: '.swiper-pagination',
+         clickable: true,
+      },
+      breakpoints: {
+         768: {
+            slidesPerView: 3,
+         }
+      }
+   });
+});

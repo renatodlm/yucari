@@ -33,21 +33,31 @@ if ($related_products) : ?>
          <h2><?php echo esc_html($heading); ?></h2>
       <?php endif; ?>
 
-      <?php woocommerce_product_loop_start(); ?>
+      <div id="swiper-related-products" class="swiper max-h-[40rem] overflow-hidden">
+         <ul class="swiper-wrapper products columns-1">
 
-      <?php foreach ($related_products as $related_product) : ?>
+            <?php //woocommerce_product_loop_start();
+            ?>
 
-         <?php
-         $post_object = get_post($related_product->get_id());
+            <?php foreach ($related_products as $related_product) : ?>
 
-         setup_postdata($GLOBALS['post'] = &$post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
+               <div class="swiper-slide">
+                  <?php
+                  $post_object = get_post($related_product->get_id());
 
-         wc_get_template_part('content', 'product');
-         ?>
+                  setup_postdata($GLOBALS['post'] = &$post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
-      <?php endforeach; ?>
+                  wc_get_template_part('content', 'product');
+                  ?>
+               </div>
 
-      <?php woocommerce_product_loop_end(); ?>
+            <?php endforeach; ?>
+
+            <?php //woocommerce_product_loop_end();
+            ?>
+         </ul>
+         <div class="swiper-pagination"></div>
+      </div>
 
    </section>
 <?php

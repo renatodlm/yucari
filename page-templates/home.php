@@ -30,12 +30,42 @@ get_header();
          $products = get_sub_field('products');
          $link     = get_sub_field('link');
 
-         $products = implode(',', $products);
       ?>
          <section class="last-drop lg:py-[10rem] py-[5rem]">
             <div class="container">
                <h3 class="text-purple-900 lg:text-[3.5rem] text-5xl font-medium mb-12"><?php echo $title ?></h3>
-               <?php echo do_shortcode('[products ids="' . $products . '" columns="3" orderby="date" order="DESC"]') ?>
+
+               <?php
+               $args = array(
+                  'post_type'      => 'product',
+                  'post__in'       => $products,
+                  'posts_per_page' => -1,
+                  'orderby'        => 'date',
+                  'order'          => 'DESC',
+               );
+
+               $query = new WP_Query($args);
+
+               if ($query->have_posts()) :
+               ?>
+                  <div id="swiper-ultimmo-drop" class="swiper woocommerce max-h-[40rem] overflow-hidden">
+                     <ul class="swiper-wrapper products">
+                        <?php
+                        while ($query->have_posts()) : $query->the_post();
+                           echo '<div class="swiper-slide">';
+                           wc_get_template_part('content', 'product');
+                           echo '</div>';
+                        endwhile;
+
+                        ?>
+                     </ul>
+                     <div class="swiper-pagination"></div>
+                  </div>
+               <?php
+                  wp_reset_postdata();
+               endif;
+               ?>
+
             </div>
             <?php if ($link) : ?>
                <div class="flex justify-center items-center mt-12">
