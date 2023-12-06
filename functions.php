@@ -147,7 +147,7 @@ function yucari_scripts()
 {
    wp_enqueue_script('alpinejs', get_template_directory_uri() . '/assets/lib/alpinejs.min.js', array(), _S_VERSION, true);
 
-   wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), _S_VERSION, true);
+   wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/lib/swiper-bundle.min.js', array(), _S_VERSION, true);
    wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/lib/swiper-bundle.min.css', array(), '1.0.0', 'all');
    wp_enqueue_style('all', get_template_directory_uri() . '/assets/css/all.min.css', array(), '1.0.0', 'all');
 
@@ -352,3 +352,14 @@ function salvar_senha_registro($customer_id)
 }
 
 add_action('woocommerce_created_customer', 'salvar_senha_registro');
+
+// Filtro de pesquisa para incluir CPT Products do WooCommerce
+function filtro_pesquisa_cpt_products($query)
+{
+   if ($query->is_search && !is_admin())
+   {
+      $query->set('post_type', array('product'));
+   }
+   return $query;
+}
+add_filter('pre_get_posts', 'filtro_pesquisa_cpt_products');
