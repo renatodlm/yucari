@@ -305,14 +305,16 @@ function adicionar_campo_yucari_institution($user)
 add_action('show_user_profile', 'adicionar_campo_yucari_institution');
 add_action('edit_user_profile', 'adicionar_campo_yucari_institution');
 
+
+
 function alterar_texto_botao_carrinho()
 {
    return 'FINALIZAR PEDIDO';
 }
 
-add_filter('woocommerce_product_single_add_to_cart_text', 'alterar_texto_botao_carrinho', 10, 0);
-add_filter('woocommerce_product_add_to_cart_text', 'alterar_texto_botao_carrinho', 10, 0);
-add_filter('woocommerce_widget_cart_checkout_text', 'alterar_texto_botao_carrinho', 10, 0);
+// add_filter('woocommerce_product_single_add_to_cart_text', 'alterar_texto_botao_carrinho', 10, 0);
+// add_filter('woocommerce_product_add_to_cart_text', 'alterar_texto_botao_carrinho', 10, 0);
+// add_filter('woocommerce_widget_cart_checkout_text', 'alterar_texto_botao_carrinho', 10, 0);
 
 function custom_filter_woocommerce_registration_password()
 {

@@ -13,6 +13,7 @@ if (is_product())
 {
    $product = wc_get_product(get_the_ID());
 }
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
