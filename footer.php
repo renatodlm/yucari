@@ -28,7 +28,7 @@
             ?>
          </div>
          <div class="w-fit">
-            <ul class="flex gap-4 text-white">
+            <ul class="flex lg:flex-row flex-col lg:text-left text-center gap-4 text-white">
                <li>
                   <a class="underline font-normal" href="mailto:yucarisp@gmail.com">
                      yucarisp@gmail.com
@@ -36,11 +36,15 @@
                </li>
                <li>
                   <a class="font-normal" href="#">
-                     IG
+                     INSTAGRAM
                   </a>
                </li>
             </ul>
          </div>
+      </div>
+      <div class="w-full flex justify-center lg:justify-end items-center lg:flex-row flex-col gap-4 mt-6">
+         <p class="text-white text-xs">desenvolvido por:</p>
+         <?php render_svg('estudio86', 'w-[2.875rem] h-10') ?>
       </div>
    </div>
 </footer>
