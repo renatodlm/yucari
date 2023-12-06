@@ -179,3 +179,53 @@ main>article {
 .search-submit {
    @apply h-[3.5rem] bg-[#841027] text-white px-6 border-none;
 }
+
+.woocommerce-message {
+   border-top-color: #333333;
+}
+
+.woocommerce-message::before {
+   color: #333333;
+}
+
+.woocommerce-info {
+   border-top-color: #959595;
+}
+
+.woocommerce-info::before {
+   color: #959595;
+}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+   background-color: #eeeeee;
+}
+
+.woocommerce-warning {
+   border-top-color: #841027;
+}
+
+.woocommerce-warning::before {
+   color: #841027;
+}
+
+
+.woocommerce-checkout #payment ul.payment_methods {
+   border-color: #eeeeee;
+}
+
+.woocommerce-checkout #payment {
+   background-color: #eeeeee;
+}
+
+.woocommerce-checkout #payment div.payment_box {
+   background-color: #e0e0e0;
+}
+
+.woocommerce-checkout #payment div.payment_box::before {
+   border: 1em solid #e0e0e0;
+   border-right-color: transparent;
+   border-left-color: transparent;
+   border-top-color: transparent;
+}

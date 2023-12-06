@@ -35,7 +35,7 @@
                   </a>
                </li>
                <li>
-                  <a class="font-normal" href="#">
+                  <a class="font-normal" href="https://www.instagram.com/yucarisp/" target="_blank">
                      INSTAGRAM
                   </a>
                </li>

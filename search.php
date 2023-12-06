@@ -16,9 +16,9 @@ get_header();
    <?php if (have_posts()) : ?>
 
       <div class="container woocommerce">
-         <header class="page-header mt-10">
+         <header class="page-header">
             <div>
-               <h1 class="entry-title">
+               <h1 class="entry-title pt-[3.75rem]">
                   <?php
                   /* translators: %s: search query. */
                   printf(esc_html__('Search Results for: %s', 'yucari'), '<span class="normal-case">' . get_search_query() . '</span>');

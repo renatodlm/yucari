@@ -384,3 +384,21 @@ body.single .woocommerce .products.columns-1 li.product {
    max-width: 100% !important;
    width: 100% !important;
 }
+
+
+.woocommerce div.product div.summary {
+   display: flex;
+   flex-direction: column;
+}
+
+.woocommerce div.product div.summary #rp_shipping_calculator {
+   @apply lg:order-1 order-2;
+}
+
+.woocommerce div.product div.summary .woocommerce-product-details__short-description {
+   @apply lg:order-2 order-1;
+}
+
+.woocommerce div.product div.summary form {
+   @apply order-3;
+}

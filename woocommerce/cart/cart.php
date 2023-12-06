@@ -180,7 +180,7 @@ do_action('woocommerce_before_cart'); ?>
                   <?php } ?>
 
                   <div class="flex gap-6 w-full items-center">
-                     <button type="submit" class="w-1/2 h-[3.5rem] !border-[#000] !border-solid !border !bg-transparent !rounded-none button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
+                     <button type="submit" class="w-1/2 h-[3.5rem] !text-[#515151] !border-[#000] !border-solid !border !bg-transparent !rounded-none button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
                      <?php $new_checkout_url = WC()->cart->get_checkout_url(); ?>
                      <div class="w-1/2 wc-proceed-to-checkout">
                         <a href="<?php echo $new_checkout_url; ?>" class="checkout-button button alt wc-forward h-[3.5rem] !mb-0 !py-0 !flex !items-center !justify-center !rounded-none !bg-[#841027]">
