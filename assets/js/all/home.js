@@ -61,38 +61,38 @@ document.addEventListener('DOMContentLoaded', function () {
       }
    });
 
-   // var homeVideo = document.getElementById('homeVideo');
+   var homeVideo = document.getElementById('homeVideo');
 
-   // if (homeVideo) {
-   //    // Inicia o vídeo mutado e com volume 0
-   //    homeVideo.muted = true;
-   //    // homeVideo.volume = 0;
-   //    homeVideo.play();
+   if (homeVideo) {
+      // Inicia o vídeo mutado e com volume 0
+      homeVideo.muted = true;
+      // homeVideo.volume = 0;
+      homeVideo.play();
 
-   //    // Função para ajustar o volume
-   //    function ajustarVolume() {
-   //       var videoOffsetTop = document.querySelector('.collection').offsetTop;
-   //       var videoHeight = document.querySelector('.collection').offsetHeight;
-   //       var windowHeight = window.innerHeight;
+      // // Função para ajustar o volume
+      // function ajustarVolume() {
+      //    var videoOffsetTop = document.querySelector('.collection').offsetTop;
+      //    var videoHeight = document.querySelector('.collection').offsetHeight;
+      //    var windowHeight = window.innerHeight;
 
-   //       var scrollPosition = window.scrollY;
-   //       // homeVideo.muted = false;
-   //       homeVideo.volume = 0.5
+      //    var scrollPosition = window.scrollY;
+      //    // homeVideo.muted = false;
+      //    homeVideo.volume = 0.5
 
-   //       if (console.log(scrollPosition >= videoOffsetTop - windowHeight && scrollPosition <= videoOffsetTop + videoHeight)) {
-   //          var progresso = (scrollPosition - (videoOffsetTop - windowHeight)) / videoHeight;
-   //          var novoVolume = progresso;
+      //    if (console.log(scrollPosition >= videoOffsetTop - windowHeight && scrollPosition <= videoOffsetTop + videoHeight)) {
+      //       var progresso = (scrollPosition - (videoOffsetTop - windowHeight)) / videoHeight;
+      //       var novoVolume = progresso;
 
-   //          // if (novoVolume > 1) {
-   //          //    novoVolume = 1;
-   //          // }
+      //       // if (novoVolume > 1) {
+      //       //    novoVolume = 1;
+      //       // }
 
-   //          homeVideo.muted = false;
-   //          // homeVideo.volume = novoVolume;
-   //       }
-   //    }
+      //       homeVideo.muted = false;
+      //       // homeVideo.volume = novoVolume;
+      //    }
+      // }
 
-   //    // Adiciona um ouvinte de evento para o evento de rolagem
-   //    window.addEventListener('scroll', ajustarVolume);
-   // }
+      // Adiciona um ouvinte de evento para o evento de rolagem
+      // window.addEventListener('scroll', ajustarVolume);
+   }
 });

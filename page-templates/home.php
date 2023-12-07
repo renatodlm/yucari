@@ -86,13 +86,28 @@ get_header();
       ?>
          <section class="collection lg:py-[10rem] py-[5rem] bg-yellow-100 scrolling-container scrolling-container ">
             <div class="container relative">
-               <video id="homeVideo" class="m-auto w-full max-w-[19.6875rem] h-auto relative z-10">
+               <?php
+               
+               if (isiPhone())
+               { ?>
+                  <video id="homeVideo" class="m-auto w-full max-w-[19.6875rem] h-auto relative z-10" autoplay loop muted playsinline controls="true">
 
-                  <source src="<?php echo $video['url'] ?>" type="video/mp4">
+                     <source src="<?php echo $video['url'] ?>" type="video/mp4">
 
-                  Your browser does not support the video tag.
+                     Seu navegador não suporta a tag de vídeo.
 
-               </video>
+                  </video>
+               <?php }
+               else
+               { ?>
+                  <video id="homeVideo" class="m-auto w-full max-w-[19.6875rem] h-auto relative z-10" autoplay loop muted>
+
+                     <source src="<?php echo $video['url'] ?>" type="video/mp4">
+
+                     Seu navegador não suporta a tag de vídeo.
+
+                  </video>
+               <?php } ?>
                <div class="image-animation m-auto text-center absolute -left-[100vw] top-1/2 -translate-y-1/2 z-0" style="background-image: url(<?php echo $logo_src ?>);">
                </div>
             </div>

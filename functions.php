@@ -363,3 +363,9 @@ function filtro_pesquisa_cpt_products($query)
    return $query;
 }
 add_filter('pre_get_posts', 'filtro_pesquisa_cpt_products');
+
+function isiPhone()
+{
+   $userAgent = $_SERVER['HTTP_USER_AGENT'];
+   return (bool) preg_match('/iPhone/', $userAgent);
+}
