@@ -32,6 +32,6 @@ global $post;
 
 ?>
 <div class="woocommerce-product-details__short-description mb-10">
-   <?php echo get_the_content(); // WPCS: XSS ok.
+   <?php echo adicionar_br_no_the_content(get_the_content()); // WPCS: XSS ok.
    ?>
 </div>

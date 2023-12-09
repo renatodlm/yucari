@@ -33,7 +33,7 @@ get_header();
       ?>
          <section class="last-drop lg:py-[10rem] py-[5rem]">
             <div class="container">
-               <h3 class="text-purple-900 lg:text-[3.5rem] text-5xl font-medium mb-12"><?php echo $title ?></h3>
+               <h3 class="text-purple-900 lg:text-[2rem] text-[1.3rem] font-medium mb-12"><?php echo $title ?></h3>
 
                <?php
                $args = array(
@@ -87,7 +87,7 @@ get_header();
          <section class="collection lg:py-[10rem] py-[5rem] bg-yellow-100 scrolling-container scrolling-container ">
             <div class="container relative">
                <?php
-               
+
                if (isiPhone())
                { ?>
                   <video id="homeVideo" class="m-auto w-full max-w-[19.6875rem] h-auto relative z-10" autoplay loop muted playsinline controls="true">

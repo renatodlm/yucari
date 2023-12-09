@@ -11,7 +11,7 @@ get_header();
 
 <main>
    <div class="container lg:pt-[10rem] pt-[5rem]">
-      <h1 class="lg:text-[3.5rem] text-5xl text-purple-900 mb-12 uppercase">
+      <h1 class="lg:text-[2rem] text-[1.3rem] text-purple-900 mb-12 uppercase">
          <?php the_title(); ?>
       </h1>
       <?php if (have_rows('sobre')) :

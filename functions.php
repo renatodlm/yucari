@@ -369,3 +369,10 @@ function isiPhone()
    $userAgent = $_SERVER['HTTP_USER_AGENT'];
    return (bool) preg_match('/iPhone/', $userAgent);
 }
+
+function adicionar_br_no_the_content($content)
+{
+   $content = nl2br($content);
+
+   return $content;
+}

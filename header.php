@@ -41,7 +41,7 @@ $class_count = $numero_produtos_carrinho <= 99 ? 'text-xs' : 'text-[0.625rem]';
 
    <header class="header" x-data="{menuMobile: false}">
       <div class="container">
-         <div class="flex gap-10 lg:gap-[4.75rem] 3xl:gap-[9.375rem] justify-center items-center">
+         <div class="flex gap-10 lg:gap-[4.75rem] 3xl:gap-[9.375rem] justify-between items-center">
             <div class="w-[10rem]">
                <?php the_custom_logo() ?>
             </div>
@@ -103,7 +103,7 @@ $class_count = $numero_produtos_carrinho <= 99 ? 'text-xs' : 'text-[0.625rem]';
          ]);
          ?>
 
-         <ul class="flex gap-4 justify-center mt-8">
+         <ul class="flex gap-4 justify-start px-4">
             <li>
                <a href="<?php echo home_url() . '?s=' ?>">
                   <?php render_svg('search'); ?>
