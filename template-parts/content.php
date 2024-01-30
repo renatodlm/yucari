@@ -9,15 +9,18 @@
  */
 
 $product = null;
+$produc_single_class = '';
+
 if (is_product())
 {
    $product = wc_get_product(get_the_ID());
+   $produc_single_class = 'hidden lg:block';
 }
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-   <header class="entry-header">
+   <header class="entry-header <?php echo $produc_single_class; ?>">
       <div>
          <?php
          if (is_singular() && !is_product()) :

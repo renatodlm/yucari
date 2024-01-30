@@ -15,7 +15,7 @@
    <div class="container">
       <div class="flex gap-[5rem] lg:gap-[9.375rem] flex-wrap justify-center items-center">
          <div class="w-[10rem]">
-            <?php the_custom_logo() ?>
+            <img src="<?php echo get_template_directory_uri() ?>/assets/icons/logo.svg" alt="">
          </div>
          <div class="lg:flex-1">
             <?php
@@ -30,13 +30,13 @@
          <div class="w-fit">
             <ul class="flex lg:flex-row flex-col lg:text-left text-center gap-4 text-white">
                <li>
-                  <a class="underline font-normal" href="mailto:yucarisp@gmail.com">
-                     yucarisp@gmail.com
+                  <a class="underline font-normal flex items-center" href="mailto:yucarisp@gmail.com">
+                     <i class="icon icon-email"></i> yucarisp@gmail.com
                   </a>
                </li>
                <li>
-                  <a class="font-normal" href="https://www.instagram.com/yucarisp/" target="_blank">
-                     INSTAGRAM
+                  <a class="font-normal flex items-center" href="https://www.instagram.com/yucarisp/" target="_blank">
+                     <i class="icon icon-instagram"></i> @yucarisp
                   </a>
                </li>
             </ul>

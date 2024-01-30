@@ -84,4 +84,36 @@ document.addEventListener('DOMContentLoaded', function () {
          }
       }
    });
+
+
+   var init = false;
+   var single_product_gallery;
+   function swiperCard() {
+      if (window.innerWidth <= 768) {
+         if (!init) {
+            init = true;
+            single_product_gallery = new Swiper("#single-product-galerry", {
+               effect: 'fade',
+               loop: true,
+               fadeEffect: {
+                  crossFade: true
+               },
+               slidesPerView: 1,
+               spaceBetween: 30,
+               // simulateTouch: true,
+               breakpoints: {
+                  768: {
+                     slidesPerView: 'auto',
+                  }
+               }
+            });
+         }
+      } else if (init) {
+         single_product_gallery.destroy();
+         init = false;
+      }
+   }
+   swiperCard();
+   window.addEventListener("resize", swiperCard);
+
 });

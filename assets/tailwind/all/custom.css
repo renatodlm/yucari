@@ -1,9 +1,9 @@
 body {
-   @apply bg-white overflow-x-hidden;
+   @apply bg-yellow-100 overflow-x-hidden;
 }
 
 section.hero {
-   @apply h-[100vh] bg-black bg-cover bg-center bg-no-repeat relative z-0;
+   @apply lg:pt-[53.334%] bg-yellow-100 bg-cover bg-center bg-no-repeat relative z-0 pt-[120%];
 }
 
 body.home .header {
@@ -11,7 +11,7 @@ body.home .header {
 }
 
 .header {
-   @apply bg-purple-900 lg:py-20 py-5;
+   @apply bg-yellow-100 lg:py-20 pt-20 pb-10;
 }
 
 .footer {
@@ -32,7 +32,7 @@ ul.menu-primary {
 }
 
 .menu-primary li a {
-   @apply text-white font-normal text-sm 2xl:text-base font-secondary;
+   @apply text-purple-900 font-normal text-sm 2xl:text-base font-secondary;
 }
 
 .menu-item {
@@ -40,7 +40,7 @@ ul.menu-primary {
 }
 
 ul.menu-primary-mobile {
-   @apply flex flex-col gap-y-6 items-start flex-wrap justify-center py-[5rem] px-4;
+   @apply flex flex-col gap-y-6 items-center flex-wrap justify-center py-[5rem];
 }
 
 .menu-primary-mobile .menu-item {
@@ -120,15 +120,15 @@ ul.sub-menu .menu-item.menu-item-has-children:hover::after {
 }
 
 .entry-title {
-   @apply lg:!text-[2rem] !text-[1.3rem] font-medium mb-12 leading-none uppercase;
+   @apply lg:text-[3.5rem] text-2xl font-medium mb-12 leading-none;
 }
 
 .entry-content {
-   @apply lg:mb-[10rem] mb-[5rem];
+   @apply lg:mb-[6.25rem] mb-[5rem];
 }
 
 main>article {
-   @apply container lg:pt-[10rem] pt-[5rem];
+   @apply container lg:pt-[6.25rem];
 }
 
 @media(max-width:1024px) {
@@ -228,4 +228,29 @@ main>article {
    border-right-color: transparent;
    border-left-color: transparent;
    border-top-color: transparent;
+}
+
+.virt-pagseguro-installments,
+.virt-pagseguro-installments * {
+   @apply font-bold text-xl;
+}
+
+.footer .menu-item a {
+   @apply text-white !py-0;
+}
+
+.footer .menu-item:first-of-type {
+   @apply relative !py-0 px-4 after:content-[''] after:bg-white after:w-[1px] after:h-full after:absolute after:right-0 after:top-0
+}
+
+i.icon {
+   @apply w-4 h-4 inline-block mr-2 bg-no-repeat bg-center bg-contain;
+}
+
+i.icon-email {
+   background-image: url(./../icons/email.svg);
+}
+
+i.icon-instagram {
+   background-image: url(./../icons/instagram.svg);
 }

@@ -16,9 +16,14 @@ get_header();
          $bg_src     = $background['sizes']['large'] ?? '';
          $logo       = get_sub_field('logo');
          $logo_src   = $logo['sizes']['large'] ?? '';
+
+         $shop_page_url = get_permalink(wc_get_page_id('shop'));
       ?>
          <section class="hero scrolling-container" style="background-image: url(<?php echo $bg_src ?>);">
             <div class="image-animation-hero m-auto text-center absolute -left-[100vw] top-1/2 -translate-y-1/2 z-0" style="background-image: url(<?php echo $logo_src ?>);">
+            </div>
+            <div class="flex justify-center items-center absolute left-4 bottom-4">
+               <a class="text-2xl leading-none border border-white py-4 px-8 rounded-xl flex justify-center items-center w-fit text-white" href="<?php echo esc_url($shop_page_url) ?>">Shop</a>
             </div>
          </section>
       <?php endwhile; ?>
@@ -31,10 +36,8 @@ get_header();
          $link     = get_sub_field('link');
 
       ?>
-         <section class="last-drop lg:py-[10rem] py-[5rem]">
+         <section class="last-drop lg:py-[6.25rem] py-[5rem]">
             <div class="container">
-               <h3 class="text-purple-900 lg:text-[2rem] text-[1.3rem] font-medium mb-12"><?php echo $title ?></h3>
-
                <?php
                $args = array(
                   'post_type'      => 'product',
@@ -48,7 +51,7 @@ get_header();
 
                if ($query->have_posts()) :
                ?>
-                  <div id="swiper-ultimmo-drop" class="swiper woocommerce max-h-[40rem] overflow-hidden">
+                  <div id="swiper-ultimmo-drop" class="swiper woocommerce overflow-hidden">
                      <ul class="swiper-wrapper products">
                         <?php
                         while ($query->have_posts()) : $query->the_post();
@@ -65,11 +68,10 @@ get_header();
                   wp_reset_postdata();
                endif;
                ?>
-
             </div>
             <?php if ($link) : ?>
                <div class="flex justify-center items-center mt-12">
-                  <a class="text-2xl leading-none font-medium border-4 border-purple-900 py-[2.1rem] px-8 rounded-[60%] min-w-[19.375rem] flex justify-center items-center w-fit" href="<?php echo $link['url'] ?>"><?php echo $link['title'] ?></a>
+                  <a class="text-2xl leading-none border border-purple-900 py-4 px-8 rounded-xl flex justify-center items-center w-fit" href="<?php echo $link['url'] ?>"><?php echo $link['title'] ?></a>
                </div>
             <?php endif; ?>
          </section>
@@ -84,7 +86,7 @@ get_header();
          $link     = get_sub_field('link');
 
       ?>
-         <section class="collection lg:py-[10rem] py-[5rem] bg-yellow-100 scrolling-container scrolling-container ">
+         <section class="collection lg:pb-[6.25rem] pb-[5rem] bg-yellow-100 scrolling-container scrolling-container ">
             <div class="container relative">
                <?php
 
@@ -111,11 +113,7 @@ get_header();
                <div class="image-animation m-auto text-center absolute -left-[100vw] top-1/2 -translate-y-1/2 z-0" style="background-image: url(<?php echo $logo_src ?>);">
                </div>
             </div>
-            <?php if ($link) : ?>
-               <div class="flex justify-center items-center mt-12">
-                  <a class="text-2xl leading-none font-medium border-4 border-purple-900 py-[2.1rem] px-8 rounded-[60%] min-w-[19.375rem] flex justify-center items-center w-fit" href="<?php echo $link['url'] ?>"><?php echo $link['title'] ?></a>
-               </div>
-            <?php endif; ?>
+
          </section>
       <?php endwhile; ?>
    <?php endif; ?>

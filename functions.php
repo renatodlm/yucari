@@ -145,6 +145,13 @@ add_action('widgets_init', 'yucari_widgets_init');
  */
 function yucari_scripts()
 {
+
+   // Enqueue GSAP
+   wp_enqueue_script('gsap', 'https://unpkg.com/gsap@3/dist/gsap.min.js', array(), null, true);
+
+   // Enqueue ScrollTrigger
+   wp_enqueue_script('scrolltrigger', 'https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js', array('gsap'), null, true);
+
    wp_enqueue_script('alpinejs', get_template_directory_uri() . '/assets/lib/alpinejs.min.js', array(), _S_VERSION, true);
 
    wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/lib/swiper-bundle.min.js', array(), _S_VERSION, true);
@@ -335,7 +342,7 @@ function disable_reset_password_link($user_login, $user_data)
 
 function adicionar_classe_galeria_produto($html, $attachment_id)
 {
-   $html = preg_replace('/class="/', 'class="wp-post-image ', $html);
+   $html = preg_replace('/class="/', 'class="wp-post-image swiper-slide ', $html);
    return $html;
 }
 
@@ -368,11 +375,4 @@ function isiPhone()
 {
    $userAgent = $_SERVER['HTTP_USER_AGENT'];
    return (bool) preg_match('/iPhone/', $userAgent);
-}
-
-function adicionar_br_no_the_content($content)
-{
-   $content = nl2br($content);
-
-   return $content;
 }

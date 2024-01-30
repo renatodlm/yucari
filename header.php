@@ -40,8 +40,18 @@ $class_count = $numero_produtos_carrinho <= 99 ? 'text-xs' : 'text-[0.625rem]';
    <?php wp_body_open(); ?>
 
    <header class="header" x-data="{menuMobile: false}">
+      <section class="ambassadors ambassadors--css-only absolute top-0 left-0">
+         <div class="ambassadors__bottom large-heading">
+            <div class="ambassador large-heading">
+               <p class="text-white text-2xl tracking-[2px]">
+                  Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500.Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500. Frete Grátis acima de R$500.
+               </p>
+            </div>
+         </div>
+      </section>
+
       <div class="container">
-         <div class="flex gap-10 lg:gap-[4.75rem] 3xl:gap-[9.375rem] justify-between items-center">
+         <div class="flex gap-10 lg:gap-[4.75rem] 3xl:gap-[9.375rem] justify-center items-center">
             <div class="w-[10rem]">
                <?php the_custom_logo() ?>
             </div>
@@ -72,12 +82,12 @@ $class_count = $numero_produtos_carrinho <= 99 ? 'text-xs' : 'text-[0.625rem]';
                      <a class="relative" href="<?= wc_get_cart_url() ?>">
                         <?php render_svg('shopping-cart'); ?>
                         <?php if (!empty($numero_produtos_carrinho)) : ?>
-                           <span class="absolute w-5 h-5 text-purple-900 bg-white bottom-0 right-0 -mb-2.5 -mr-2.5 rounded-full flex items-center justify-center <?php echo $class_count ?>"><?php echo $numero_produtos_carrinho; ?></span>
+                           <span class="absolute w-5 h-5 bg-purple-900 text-white bottom-0 right-0 -mb-2.5 -mr-2.5 rounded-full flex items-center justify-center <?php echo $class_count ?>"><?php echo $numero_produtos_carrinho; ?></span>
                         <?php endif; ?>
                      </a>
                   </li>
                   <li class="lg:hidden">
-                     <button @click="menuMobile = true" class="text-white">
+                     <button @click="menuMobile = true" class="text-purple-900">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                         </svg>
@@ -103,7 +113,7 @@ $class_count = $numero_produtos_carrinho <= 99 ? 'text-xs' : 'text-[0.625rem]';
          ]);
          ?>
 
-         <ul class="flex gap-4 justify-start px-4">
+         <ul class="flex gap-4 justify-center mt-8">
             <li>
                <a href="<?php echo home_url() . '?s=' ?>">
                   <?php render_svg('search'); ?>

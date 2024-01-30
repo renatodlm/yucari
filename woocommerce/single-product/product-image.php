@@ -37,22 +37,30 @@ $wrapper_classes   = apply_filters(
       'images',
    )
 );
+
 ?>
-<div class="flex flex-col order-1 flex-1 single-gallery">
-   <?php
-   if ($post_thumbnail_id)
-   {
-      $html = wc_get_gallery_image_html($post_thumbnail_id, true);
-   }
-   else
-   {
-      $html  = '<div class="woocommerce-product-gallery__image--placeholder">';
-      $html .= sprintf('<img src="%s" alt="%s" class="wp-post-image" />', esc_url(wc_placeholder_img_src('woocommerce_single')), esc_html__('Awaiting product image', 'woocommerce'));
-      $html .= '</div>';
-   }
+<div id="single-product-galerry" class="flex flex-col order-1 flex-1 single-gallery swiper">
+   <div class="swiper-wrapper flex-row lg:flex-col">
+      <?php
+      $html = '';
+      if ($post_thumbnail_id)
+      {
+         $html .= '<div class="swiper-slide">';
+         $html .= wc_get_gallery_image_html($post_thumbnail_id, true);
+         $html .= '</div>';
+      }
+      else
+      {
+         $html .= '<div class="swiper-slide">';
+         $html .= '<div class="woocommerce-product-gallery__image--placeholder">';
+         $html .= sprintf('<img src="%s" alt="%s" class="wp-post-image" />', esc_url(wc_placeholder_img_src('woocommerce_single')), esc_html__('Awaiting product image', 'woocommerce'));
+         $html .= '</div>';
+         $html .= '</div>';
+      }
 
-   echo apply_filters('woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
+      echo $html;
 
-   do_action('woocommerce_product_thumbnails');
-   ?>
+      do_action('woocommerce_product_thumbnails');
+      ?>
+   </div>
 </div>
